@@ -22,10 +22,10 @@
                     <div class="col-lg-4 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="ion-ios-arrow-right"></i> <a href="#intro">Home</a></li>
-                            <li><i class="ion-ios-arrow-right"></i> <a href="#about">About us</a></li>
-                            <li><i class="ion-ios-arrow-right"></i> <a href="#services">Services</a></li>
-                            <li><i class="ion-ios-arrow-right"></i> <a href="#portfolio">Gallery</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="<?php echo base_url('User') ;?>">Home</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="<?php echo base_url('About_Us') ;?>">About us</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="<?php echo base_url('Our_Services') ;?>">Services</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="<?php echo base_url('Contact_Us') ;?>">Contact Us</a></li>
                         </ul>
                     </div>
 

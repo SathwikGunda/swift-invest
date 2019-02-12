@@ -37,25 +37,26 @@
     <!--==========================
     Header
     ============================-->
-    <header id="header" class="header-scrolled">
-        <div class="container-fluid">
+    <header id="header" class="">
+        <div class="container">
+            <div class="bg">
+                <div id="logo" class="pull-left logo-header">
+                    <?php if(isset($logo_details['image']) && $logo_details['image']!=''){ ?>
+                    <img class="" src="<?php echo base_url('assets/logo/'.$logo_details['image']); ?>" alt="<?php echo isset($logo_details['org_image'])?$logo_details['org_image']:''; ?>">
+                    <?php }else{ ?>
+                    <img class="" src="<?php echo base_url(); ?>assets/vendor/admin/img/logo.png" alt="Logo">
+                    <?php } ?>
+                </div>
 
-            <div id="logo" class="pull-left logo-header">
-                <?php if(isset($logo_details['image']) && $logo_details['image']!=''){ ?>
-                <img class="" src="<?php echo base_url('assets/logo/'.$logo_details['image']); ?>" alt="<?php echo isset($logo_details['org_image'])?$logo_details['org_image']:''; ?>">
-                <?php }else{ ?>
-                <img class="" src="<?php echo base_url(); ?>assets/vendor/admin/img/logo.png" alt="Logo">
-                <?php } ?>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li class="<?php if($active_status==1){echo 'menu-active';}?>"><a href="<?php echo base_url('User') ;?> ">Home</a></li>
+                        <li class="<?php if($active_status==2){echo 'menu-active';}?>"><a href="<?php echo base_url('About_Us') ;?>">About Us</a></li>
+                        <li class="<?php if($active_status==4){echo 'menu-active';}?>"><a href="<?php echo base_url('Our_Services') ;?>">Services</a></li>
+                        <li ><a href="<?php echo base_url('User') ;?>#testimonials">Team</a></li>
+                        <li class="<?php if($active_status==3){echo 'menu-active';}?>"><a href="<?php echo base_url('Contact_Us') ;?>">Contact Us</a></li>
+                    </ul>
+                </nav><!-- #nav-menu-container -->
             </div>
-
-            <nav id="nav-menu-container">
-                <ul class="nav-menu">
-                    <li class="<?php if($active_status==1){echo 'menu-active';}?>"><a href="<?php echo base_url('User') ;?> ">Home</a></li>
-                    <li class="<?php if($active_status==2){echo 'menu-active';}?>"><a href="<?php echo base_url('About_Us') ;?>">About Us</a></li>
-                    <li class="<?php if($active_status==4){echo 'menu-active';}?>"><a href="<?php echo base_url('Our_Services') ;?>">Services</a></li>
-                    <li ><a href="#">Team</a></li>
-                    <li class="<?php if($active_status==3){echo 'menu-active';}?>"><a href="<?php echo base_url('Contact_Us') ;?>">Contact</a></li>
-                </ul>
-            </nav><!-- #nav-menu-container -->
         </div>
     </header><!-- #header -->

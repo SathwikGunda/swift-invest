@@ -2,7 +2,7 @@
     <div class="content container-fluid bg-white">
         <div class="row">
             <div class="col-xs-12">
-                <h4 class="page-title">Gallery <span class="text-warning">( image Should be 400px width and height 300px )</span></h4>
+                <h4 class="page-title">Services <span class="text-warning">( image Should be 400px width and height 300px )</span></h4>
             </div>
         </div>
         <form id="defaultForm" method="post" class="m-b-30" action="<?php echo base_url('gallery/addpost'); ?>" enctype="multipart/form-data">
@@ -16,7 +16,7 @@
                                     Image
                                 </th>
                                 <th class="text-center">
-                                    Title
+                                    Service Name
                                 </th>
                             </tr>
                         </thead>

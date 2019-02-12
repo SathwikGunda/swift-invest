@@ -2,14 +2,14 @@
     <div class="content container-fluid bg-white">
         <div class="row">
             <div class="col-xs-12">
-                <h4 class="page-title">Testimonial <span class="text-warning">( image Should be300px width and height 300px )</span></h4>
+                <h4 class="page-title">Our Team<span class="text-warning">( image Should be300px width and height 300px )</span></h4>
             </div>
 
         </div>
         <form id="defaultForm" method="post" class="m-b-30" action="<?php echo base_url('testimonial/addpost'); ?>" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-8">
-                    <h4 class="text-primary">Testimonial </h4>
+                    <h4 class="text-primary">Team </h4>
                     <div class="form-group">
                         <label>Upload Image</label>
                         <input type="file" name="image" id="image" class="form-control">

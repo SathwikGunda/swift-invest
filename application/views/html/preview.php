@@ -36,44 +36,40 @@
 
     <!--==========================
     Header
-  ============================-->
+    ============================-->
     <header id="header" class="">
         <div class="container-fluid">
-
             <div id="logo" class="pull-left logo-header">
-
                 <?php if($logo_details['image']==''){ ?>
                 <img src="<?php echo base_url(); ?>assets/vendor/img/logo.png" alt="logo" height="70px">
                 <?php }else{ ?>
                 <img src="<?php echo base_url('assets/logo/'.$logo_details['image']); ?>" alt="logo" height="70px">
                 <?php } ?>
-
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="#intro">Home</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Gallery</a></li>
-
-
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#portfolio">Services</a></li>
+                    <li><a href="#testimonials">Team</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
     </header><!-- #header -->
 
+    
     <!--==========================
     Intro Section
-  ============================-->
+    ============================-->
     <form action="<?php echo base_url('preview/okpost'); ?>" method="post">
+        
         <?php if(isset($slider_details) && count($slider_details)>0){ ?>
         <section id="intro">
             <div class="intro-container">
                 <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
 
                     <ol class="carousel-indicators"></ol>
-
                     <div class="carousel-inner" role="listbox">
                         <?php $cnt=1;foreach($slider_details as $list){ ?>
                         <input type="hidden" name="slider_id[]" id="slider_id" value="<?php echo isset($list['s_id'])?$list['s_id']:''; ?>">
@@ -85,7 +81,6 @@
                                     <h2>
                                         <?php echo isset($list['text'])?$list['text']:''; ?>
                                     </h2>
-
                                 </div>
                             </div>
                         </div>
@@ -97,7 +92,6 @@
                                     <h2>
                                         <?php echo isset($list['text'])?$list['text']:''; ?>
                                     </h2>
-
                                 </div>
                             </div>
                         </div>
@@ -112,7 +106,6 @@
                             <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
-
                     </div>
                 </div>
             </div>
@@ -120,9 +113,10 @@
         <?php } ?>
 
         <main id="main">
+            
             <!--==========================
-      About Us Section
-    ============================-->
+            About Us Section
+            ============================-->
             <?php if(isset($aboutus_details) && count($aboutus_details)>0){ ?>
             <section id="about">
                 <div class="container">
@@ -136,7 +130,6 @@
                     <input type="hidden" name="about_us_a_id" id="about_us_a_id" value="<?php echo isset($aboutus_details['a_id'])?$aboutus_details['a_id']:''; ?>">
 
                     <div class="row about-cols">
-
                         <div class="col-md-4 wow fadeInUp">
                             <div class="about-col">
                                 <div class="img">
@@ -182,224 +175,161 @@
             </section><!-- #about -->
             <?php } ?>
 
+            
             <!--==========================
-      Services Section
-    ============================-->
-            <?php if(isset($services_details) && count($services_details)>0){ ?>
-            <section id="services">
-                <div class="container">
-                    <input type="hidden" name="services_id" id="services_id" value="<?php echo isset($services_details['s_id'])?$services_details['s_id']:''; ?>">
-
-                    <header class="section-header wow fadeInUp">
-                        <h3>Services</h3>
-                        <p>
-                            <?php echo isset($services_details['paragraph'])?$services_details['paragraph']:''; ?>.</p>
-                    </header>
-
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-                            <h4 class="title"><a href="">
-                                    <?php echo isset($services_details['title1'])?$services_details['title1']:''; ?></a></h4>
-                            <p>
-                                <?php echo isset($services_details['paragraph1'])?$services_details['paragraph1']:''; ?>.</p>
-                        </div>
-                        <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-                            <h4 class="title"><a href="">
-                                    <?php echo isset($services_details['title2'])?$services_details['title2']:''; ?></a></h4>
-                            <p>
-                                <?php echo isset($services_details['paragraph2'])?$services_details['paragraph2']:''; ?>.</p>
-                        </div>
-                        <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
-                            <h4 class="title"><a href="">
-                                    <?php echo isset($services_details['title3'])?$services_details['title1']:''; ?></a></h4>
-                            <p>
-                                <?php echo isset($services_details['paragraph3'])?$services_details['paragraph3']:''; ?>.</p>
-                        </div>
-                        <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-                            <h4 class="title"><a href="">
-                                    <?php echo isset($services_details['title4'])?$services_details['title4']:''; ?></a></h4>
-                            <p>
-                                <?php echo isset($services_details['paragraph4'])?$services_details['paragraph4']:''; ?>.</p>
-                        </div>
-                        <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-                            <h4 class="title"><a href="">
-                                    <?php echo isset($services_details['title5'])?$services_details['title5']:''; ?></a></h4>
-                            <p>
-                                <?php echo isset($services_details['paragraph5'])?$services_details['paragraph5']:''; ?>.</p>
-                        </div>
-                        <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-                            <h4 class="title"><a href="">
-                                    <?php echo isset($services_details['title6'])?$services_details['title6']:''; ?></a></h4>
-                            <p>
-                                <?php echo isset($services_details['paragraph6'])?$services_details['paragraph6']:''; ?>.</p>
-                        </div>
-
-                    </div>
-
+            Call To Action Section
+            ============================-->
+            <section id="call-to-action" class="wow fadeIn">
+                <div class="container text-center">
+                    <h3>Our offer sounds interesting?</h3>
+                    <p>Feel free to contact us now, we are at your service 24/7. There are many ways you can contact us - visit our contact page.</p>
+                    <a class="cta-btn" href="#contact">Call Us Now</a>
                 </div>
-            </section><!-- #services -->
+            </section><!-- #call-to-action -->
+            
+            
+            <!--==========================
+            Our Services
+            ============================-->
+            <?php if(isset($gallery_details) && count($gallery_details)>0){ ?>
+            <section id="portfolio" class="section-bg">
+                <div class="container">
 
+                    <header class="section-header">
+                        <h3 class="section-title">Our Services</h3>
+                    </header>
+                    <div class="row portfolio-container">
+                        <?php foreach($gallery_details as $list){ ?>
+                        <input type="hidden" name="gallery_id[]" id="gallery_id" value="<?php echo isset($list['g_id'])?$list['g_id']:''; ?>">
+
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                            <div class="portfolio-wrap">
+                                <figure>
+                                    <img src="<?php echo base_url('assets/gallery/'.$list['image']); ?>" class="img-fluid" alt="<?php echo isset($list['org_image'])?$list['org_image']:''; ?>">
+                                    <a href="<?php echo base_url('assets/gallery/'.$list['image']); ?>" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                </figure>
+                                <div class="portfolio-info">
+                                    <h4>
+                                        <?php echo isset($list['text'])?$list['text']:''; ?>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </section><!-- #portfolio -->
+            <?php } ?>
+            
+            
+            <!--==========================
+            Our Team
+            ============================-->
+            <?php if(isset($testimonials_details) && count($testimonials_details)>0){ ?>
+            <section id="testimonials" class="wow fadeInUp">
+                <div class="container">
+
+                    <header class="section-header">
+                        <h3>Our Team</h3>
+                    </header>
+                    <div class="owl-carousel testimonials-carousel">
+                        <?php foreach($testimonials_details as $list){ ?>
+
+                        <div class="testimonial-item">
+                            <img src="<?php echo base_url('assets/testimonial/'.$list['image']); ?>" class="testimonial-img" alt="<?php echo isset($list['org_image'])?$list['org_image']:''; ?>">
+                            <h3>
+                                <?php echo isset($list['name'])?$list['name']:''; ?>
+                            </h3>
+                            <h4>
+                                <?php echo isset($list['designation'])?$list['designation']:''; ?>
+                            </h4>
+                            <p>
+                                <img src="<?php echo base_url(); ?>assets/vendor/img/quote-sign-left.png" class="quote-sign-left" alt="">
+                                <?php echo isset($list['paragraph'])?$list['paragraph']:''; ?>.
+                                <img src="<?php echo base_url(); ?>assets/vendor/img/quote-sign-right.png" class="quote-sign-right" alt="">
+                            </p>
+                        </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </section><!-- #testimonials -->
             <?php } ?>
 
+            
             <!--==========================
-      Call To Action Section
-    ============================-->
-                <section id="call-to-action" class="wow fadeIn">
-                <div class="container text-center">
-                    <h3>Call To Action</h3>
-                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <a class="cta-btn" href="#contact">Call To Action</a>
+            Contact Us
+            ============================-->
+            <section id="contact" class="section-bg wow fadeInUp">
+                <div class="container">
+                    <div class="section-header">
+                        <h3>Contact Us</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                    </div>
+                    <input type="hidden" name="contactus_details_id" id="contactus_details_id" value="<?php echo isset($contactus_details['c_id'])?$contactus_details['c_id']:''; ?>">
+
+                    <div class="row contact-info">
+
+                        <div class="col-md-4">
+                            <div class="contact-address">
+                                <i class="ion-ios-location-outline"></i>
+                                <h3>Address</h3>
+                                <address>
+                                    <?php echo isset($contactus_details['address'])?$contactus_details['address']:''; ?></address>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="contact-phone">
+                                <i class="ion-ios-telephone-outline"></i>
+                                <h3>Phone Number</h3>
+                                <p><a href="tel:+155895548855">
+                                        <?php echo isset($contactus_details['phone'])?$contactus_details['phone']:''; ?></a></p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="contact-email">
+                                <i class="ion-ios-email-outline"></i>
+                                <h3>Email</h3>
+                                <p><a href="mailto:info@example.com">
+                                        <?php echo isset($contactus_details['email'])?$contactus_details['email']:''; ?></a></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form">
+                        <div id="sendmessage">Your message has been sent. Thank you!</div>
+                        <div id="errormessage"></div>
+                        <!--<form id="defaultForm" action="<?php echo base_url('preview/contactpost'); ?>" method="post" role="form" class="">-->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+                                <div class="validation"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+                            <div class="validation"></div>
+                        </div>
+                        <div><button type="submit" class="btn btn-success" name="submit">Send Message</button></div>
+                    </div>
                 </div>
-                </section><!-- #call-to-action -->
-
-                <?php if(isset($gallery_details) && count($gallery_details)>0){ ?>
-
-                <section id="portfolio" class="section-bg">
-                    <div class="container">
-
-                        <header class="section-header">
-                            <h3 class="section-title">Our Gallery</h3>
-                        </header>
-
-
-                        <div class="row portfolio-container">
-                            <?php foreach($gallery_details as $list){ ?>
-                            <input type="hidden" name="gallery_id[]" id="gallery_id" value="<?php echo isset($list['g_id'])?$list['g_id']:''; ?>">
-
-                            <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="<?php echo base_url('assets/gallery/'.$list['image']); ?>" class="img-fluid" alt="<?php echo isset($list['org_image'])?$list['org_image']:''; ?>">
-                                        <a href="<?php echo base_url('assets/gallery/'.$list['image']); ?>" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-                                        <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                    </figure>
-
-                                    <div class="portfolio-info">
-                                        <h4><a href="#">
-                                                <?php echo isset($list['text'])?$list['text']:''; ?></a></h4>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                            <?php } ?>
-
-
-                        </div>
-
-                    </div>
-                </section><!-- #portfolio -->
-
-                <?php } ?>
-
-                <?php if(isset($testimonials_details) && count($testimonials_details)>0){ ?>
-                <section id="testimonials" class="section-bg wow fadeInUp">
-                    <div class="container">
-
-                        <header class="section-header">
-                            <h3>Testimonials</h3>
-                        </header>
-
-                        <div class="owl-carousel testimonials-carousel">
-                            <?php foreach($testimonials_details as $list){ ?>
-                            <input type="hidden" name="testimonials_id[]" id="testimonials_id" value="<?php echo isset($list['t_id'])?$list['t_id']:''; ?>">
-
-                            <div class="testimonial-item">
-                                <img src="<?php echo base_url('assets/testimonial/'.$list['image']); ?>" class="testimonial-img" alt="<?php echo isset($list['org_image'])?$list['org_image']:''; ?>">
-                                <h3>
-                                    <?php echo isset($list['name'])?$list['name']:''; ?>
-                                </h3>
-                                <h4>
-                                    <?php echo isset($list['designation'])?$list['designation']:''; ?>
-                                </h4>
-                                <p>
-                                    <img src="<?php echo base_url(); ?>assets/vendor/img/quote-sign-left.png" class="quote-sign-left" alt="">
-                                    <?php echo isset($list['paragraph'])?$list['paragraph']:''; ?>.
-                                    <img src="<?php echo base_url(); ?>assets/vendor/img/quote-sign-right.png" class="quote-sign-right" alt="">
-                                </p>
-                            </div>
-                            <?php } ?>
-
-                        </div>
-
-                    </div>
-                </section><!-- #testimonials -->
-
-                <?php } ?>
-
-                <section id="contact" class="section-bg wow fadeInUp">
-                    <div class="container">
-
-                        <div class="section-header">
-                            <h3>Contact Us</h3>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-                        </div>
-                        <input type="hidden" name="contactus_details_id" id="contactus_details_id" value="<?php echo isset($contactus_details['c_id'])?$contactus_details['c_id']:''; ?>">
-
-                        <div class="row contact-info">
-
-                            <div class="col-md-4">
-                                <div class="contact-address">
-                                    <i class="ion-ios-location-outline"></i>
-                                    <h3>Address</h3>
-                                    <address>
-                                        <?php echo isset($contactus_details['address'])?$contactus_details['address']:''; ?></address>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="contact-phone">
-                                    <i class="ion-ios-telephone-outline"></i>
-                                    <h3>Phone Number</h3>
-                                    <p><a href="tel:+155895548855">
-                                            <?php echo isset($contactus_details['phone'])?$contactus_details['phone']:''; ?></a></p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="contact-email">
-                                    <i class="ion-ios-email-outline"></i>
-                                    <h3>Email</h3>
-                                    <p><a href="mailto:info@example.com">
-                                            <?php echo isset($contactus_details['email'])?$contactus_details['email']:''; ?></a></p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="form">
-                            <div id="sendmessage">Your message has been sent. Thank you!</div>
-                            <div id="errormessage"></div>
-                            <!--<form id="defaultForm" action="<?php echo base_url('preview/contactpost'); ?>" method="post" role="form" class="">-->
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
-                                    <div class="validation"></div>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
-                                    <div class="validation"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-                                <div class="validation"></div>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
-                                <div class="validation"></div>
-                            </div>
-                            <div><button type="submit" class="btn btn-success" name="submit">Send Message</button></div>
-                        </div>
-                    </div>
-                </section><!-- #contact -->
+            </section><!-- #contact -->
         </main>
 
+        
         <!--==========================
->>>>>>> 8602cd27977922d1578be8ef47090c730593da92
-    Footer
-  ============================-->
+        Footer
+        ============================-->
         <footer id="footer">
             <div class="footer-top">
                 <div class="container">
@@ -470,6 +400,8 @@
             </div>
         </footer><!-- #footer -->
     </form>
+    
+    
     <?php if($this->session->flashdata('success')): ?>
     <div class="alert_msg1 animated slideInUp bg-succ">
         <?php echo $this->session->flashdata('success');?> &nbsp; <i class="fa fa-check text-success ico_bac" aria-hidden="true"></i>
@@ -480,6 +412,8 @@
         <?php echo $this->session->flashdata('error');?> &nbsp; <i class="fa fa-exclamation-triangle text-success ico_bac" aria-hidden="true"></i>
     </div>
     <?php endif; ?>
+    
+    
     <script type="text/javascript">
         $(document).ready(function() {
             $('#defaultForm').bootstrapValidator({

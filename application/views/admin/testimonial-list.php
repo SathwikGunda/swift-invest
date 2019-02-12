@@ -2,10 +2,10 @@
     <div class="content container-fluid">
         <div class="row">
             <div class="col-xs-4">
-                <h4 class="page-title">Testimonial</h4>
+                <h4 class="page-title">Team</h4>
             </div>
             <div class="col-xs-8 text-right m-b-30">
-                <a href="<?php echo base_url('testimonial'); ?>" class="btn btn-primary pull-right rounded"><i class="fa fa-plus"></i> Add Testimonial</a>
+                <a href="<?php echo base_url('testimonial'); ?>" class="btn btn-primary pull-right rounded"><i class="fa fa-plus"></i> Add Team Member</a>
 
             </div>
         </div>

@@ -1,6 +1,19 @@
 <?php include('header.php'); ?>
 
 
+<section class="aboutus-bg header-style">
+    <div class="au-bg-overlay pt-5 pb-5">
+        <div class="container text-center pt-5 pb-5">
+            <h1 class="pt-5 mt-5">About Us</h1>
+            <ul>
+                <li><a href="<?php echo base_url('User') ;?>">home</a></li>
+                <li>About Us</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
 <!--==========================
 About Us
 ============================-->
@@ -8,12 +21,12 @@ About Us
 <section id="about">
     <div class="container">
 
-        <header class="section-header">
-            <h3>About Us</h3>
+        <div class="section-header">
+            <h3>Who We Are</h3>
             <p>
                 <?php echo isset($aboutus_details['parahraph'])?$aboutus_details['parahraph']:''; ?>
             </p>
-        </header>
+        </div>
         <input type="hidden" name="about_us_a_id" id="about_us_a_id" value="<?php echo isset($aboutus_details['a_id'])?$aboutus_details['a_id']:''; ?>">
 
         <div class="row about-cols">
