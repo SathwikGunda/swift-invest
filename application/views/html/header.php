@@ -47,14 +47,14 @@
                 <img class="" src="<?php echo base_url(); ?>assets/vendor/admin/img/logo.png" alt="Logo">
                 <?php } ?>
             </div>
-            
+
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="#intro">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li class="<?php if($active_status==1){echo 'menu-active';}?>"><a href="<?php echo base_url('User') ;?> ">Home</a></li>
+                    <li class="<?php if($active_status==2){echo 'menu-active';}?>"><a href="<?php echo base_url('About_Us') ;?>">About Us</a></li>
+                    <li class="<?php if($active_status==4){echo 'menu-active';}?>"><a href="<?php echo base_url('Our_Services') ;?>">Services</a></li>
+                    <li ><a href="#">Team</a></li>
+                    <li class="<?php if($active_status==3){echo 'menu-active';}?>"><a href="<?php echo base_url('Contact_Us') ;?>">Contact</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
